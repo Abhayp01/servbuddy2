@@ -29,8 +29,8 @@ const projects = [
     desc: "A highly conversion-optimized e-commerce platform built for scale, featuring real-time inventory management and a seamless checkout experience.",
   },
   {
-    id: "healthcare",
-    industry: "Healthcare",
+    id: "saas",
+    industry: "SaaS & Platforms",
     icon: "🏥",
     name: "PhotoMemory",
     image: photoMemoryImg,
