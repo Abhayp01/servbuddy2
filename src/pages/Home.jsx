@@ -17,6 +17,7 @@ import {
   FaQuoteLeft,
 } from "react-icons/fa";
 import SiteFooter from "../components/SiteFooter";
+import OurWork from "../components/OurWork";
 import MotionSection from "../components/ui/MotionSection";
 import GlowCard from "../components/ui/GlowCard";
 import SectionHeading from "../components/ui/SectionHeading";
@@ -286,6 +287,9 @@ const Home = () => {
           </MotionSection>
         </div>
       </section>
+
+      {/* ════════════════ OUR WORK (Scroll-Stacking) ════════════════ */}
+      <OurWork />
 
       {/* ════════════════ CORE CAPABILITIES ════════════════ */}
       <section className="relative py-24 mesh-bg">

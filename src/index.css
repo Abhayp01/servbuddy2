@@ -19,7 +19,7 @@ html {
 html, body, #root {
   background-color: #030508;
   color: #e2e8f0;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -374,4 +374,190 @@ button, a, input, textarea, select {
 .animate-text-reveal {
   animation: hero-text-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   opacity: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   OUR WORK — Scroll-Stacking Section
+   ═══════════════════════════════════════════════ */
+
+/* ─── Filter Pills ─── */
+.ow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  min-height: 40px;
+}
+
+.ow-pill:hover {
+  border-color: rgba(59,130,246,0.3);
+  color: #e2e8f0;
+  background: rgba(59,130,246,0.06);
+}
+
+.ow-pill--active {
+  border-color: rgba(59,130,246,0.5);
+  color: #3b82f6;
+  background: rgba(59,130,246,0.1);
+  box-shadow: 0 0 24px rgba(59,130,246,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* ─── Cards Stage (Desktop) ─── */
+.ow-cards-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 260px);
+  overflow: hidden;
+}
+
+/* ─── Browser Chrome Card ─── */
+.ow-browser-card {
+  width: 780px;
+  max-width: 90vw;
+  height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #0a0e17;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 0 60px rgba(59,130,246,0.04);
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+}
+
+.ow-browser-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, #141b2d 0%, #0f1420 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+
+.ow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.ow-dot--red { background: #ff5f57; }
+.ow-dot--yellow { background: #febc2e; }
+.ow-dot--green { background: #28c840; }
+
+.ow-url-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #64748b;
+  font-family: 'Inter', monospace;
+}
+
+.ow-browser-body {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ow-browser-body img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.ow-browser-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(3,5,8,0.92) 0%, rgba(3,5,8,0.7) 60%, transparent 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ow-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.25);
+  color: #4ade80;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.ow-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ─── Mobile Carousel ─── */
+.ow-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 20px 32px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ow-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.ow-carousel-card {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 85vw;
+  max-width: 400px;
+  height: 340px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 767px) {
+  .ow-browser-card {
+    height: 340px;
+  }
+  .ow-browser-footer {
+    padding: 14px;
+  }
+  .ow-pill {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }
