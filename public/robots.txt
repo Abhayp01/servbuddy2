@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://servbuddy.in/sitemap.xml
