@@ -42,7 +42,7 @@ const SiteFooter = () => {
   ];
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-100">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-14 pb-8">
         {/* Top: Brand + Columns */}
         <div className="grid gap-10 lg:grid-cols-6">
@@ -50,12 +50,12 @@ const SiteFooter = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center">
               <img
-                src="/servbuddy-logo.png"
+                src="/servbuddy-logo-dark.png"
                 alt="ServBuddy"
-                className="h-[24px] sm:h-[28px] w-auto object-contain"
+                className="h-[34px] sm:h-[40px] w-auto object-contain"
               />
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-600 max-w-xs">
+            <p className="mt-4 text-sm leading-relaxed text-slate-400 max-w-xs">
               We build, deploy, and test modern applications for businesses ready to scale. From concept to production, we've got you covered.
             </p>
             <div className="flex items-center gap-2 mt-5">
@@ -63,7 +63,7 @@ const SiteFooter = () => {
                 href="https://www.linkedin.com/company/servbuddy-in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-slate-800 hover:border-slate-300 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={14} />
@@ -72,14 +72,14 @@ const SiteFooter = () => {
                 href="https://wa.me/917818881653"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-emerald-600 hover:border-emerald-300 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-700 transition-all duration-200"
                 aria-label="WhatsApp"
               >
                 <FaWhatsapp size={14} />
               </a>
               <a
                 href="mailto:contactus@servbuddy.in"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-slate-800 hover:border-slate-300 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 transition-all duration-200"
                 aria-label="Email"
               >
                 <FaEnvelope size={14} />
@@ -90,13 +90,13 @@ const SiteFooter = () => {
           {/* Link columns */}
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-semibold text-slate-800 mb-4">{col.title}</h4>
+              <h4 className="text-sm font-semibold text-white mb-4">{col.title}</h4>
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-sm text-slate-500 hover:text-slate-800 transition-colors duration-200"
+                      className="text-sm text-slate-400 hover:text-white transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -108,11 +108,11 @@ const SiteFooter = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-slate-400">
+        <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-slate-500">
             © 2026 ServBuddy. All rights reserved.
           </p>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-500">
             Build. Deploy. Scale.
           </p>
         </div>

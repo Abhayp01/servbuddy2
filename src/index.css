@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 /* ─── Base Reset ─── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -13,7 +15,9 @@ html {
   scroll-behavior: auto;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   background-color: #FFFFFF;
   color: #1E293B;
   overflow-x: clip;
@@ -38,13 +42,16 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #F8FAFC;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
 }
@@ -61,7 +68,11 @@ body {
 }
 
 /* ─── Touch Target Size ─── */
-button, a, input, textarea, select {
+button,
+a,
+input,
+textarea,
+select {
   min-height: 44px;
 }
 
@@ -72,7 +83,10 @@ button, a, input, textarea, select {
 
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -81,10 +95,17 @@ button, a, input, textarea, select {
 
 /* ─── Mobile Typography ─── */
 @media (max-width: 640px) {
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+
   img {
     max-width: 100%;
     height: auto;
@@ -103,6 +124,7 @@ button, a, input, textarea, select {
   0% {
     stroke-dashoffset: 100;
   }
+
   100% {
     stroke-dashoffset: 0;
   }
