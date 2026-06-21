@@ -72,36 +72,53 @@ const Reveal = ({
 };
 
 /* ─── Hero Video Component ─── */
-const HeroVideo = () => (
-  <div className="relative w-full max-w-[560px] mx-auto">
-    {/* Soft ambient glow behind the mockup */}
-    <div className="absolute -inset-2 bg-gradient-to-tr from-teal-400/20 to-violet-500/20 rounded-2xl blur-xl pointer-events-none" />
+const HeroVideo = () => {
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
 
-    <div className="relative bg-white rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] border border-slate-200/60 overflow-hidden">
-      {/* Browser Top bar */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-slate-50/50">
-        <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-        <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-        <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-        <div className="flex-1 mx-4 h-6 bg-slate-100 rounded-md flex items-center px-3">
-          <span className="text-[11px] text-slate-400 font-mono">servbuddy.in/hero-showcase</span>
+  React.useEffect(() => {
+    // Delay slightly to yield main thread for initial layout & scripts
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="relative w-full max-w-[560px] mx-auto">
+      {/* Soft ambient glow behind the mockup */}
+      <div className="absolute -inset-2 bg-gradient-to-tr from-teal-400/20 to-violet-500/20 rounded-2xl blur-xl pointer-events-none" />
+
+      <div className="relative bg-white rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.08),0_1px_3px_rgba(0,0,0,0.06)] border border-slate-200/60 overflow-hidden">
+        {/* Browser Top bar */}
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-slate-50/50">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+          <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+          <div className="flex-1 mx-4 h-6 bg-slate-100 rounded-md flex items-center px-3">
+            <span className="text-[11px] text-slate-400 font-mono">servbuddy.in/hero-showcase</span>
+          </div>
+        </div>
+
+        {/* Video Content */}
+        <div className="relative aspect-video w-full bg-slate-950 overflow-hidden">
+          {shouldLoadVideo ? (
+            <video
+              src={heroArtVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-slate-900" />
+          )}
         </div>
       </div>
-
-      {/* Video Content */}
-      <div className="relative aspect-video w-full bg-slate-950 overflow-hidden">
-        <video
-          src={heroArtVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        />
-      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const LandingPage = () => {
   return (
